@@ -20,11 +20,14 @@ const setupInput = function() {
   return stdin;
 }
 
-stdin.on('data', (key) => {
-  if (key === '\u0003') {
-    process.exit();
-  }
-})
+const handleUserInput = function() {
+  stdin.on('data', (key) => {
+    if (key === '\u0003') {
+      process.exit();
+    }
+  })
+}
 
+handleUserInput();
 setupInput();
 connect();
