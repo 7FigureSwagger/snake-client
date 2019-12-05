@@ -9,17 +9,9 @@ const connect = function() {
   conn.setEncoding('utf8'); 
   conn.on('connect', () =>{
     conn.write('Name: ABN');
-    // conn.write('ALI');
-    // console.log('connection made');
+ 
   })
-  conn.on('connect', () =>{
-    setInterval(() => {
-      conn.write('Move: up');
-    }, 50);
-    
-    // conn.write('Move: left');
 
-  })
 
   conn.on('data', (data) => {
     console.log('Server says: ', data);
@@ -27,8 +19,5 @@ const connect = function() {
   return conn;
 }
 
-const connObj = {
-  connect
-}
 
-module.exports = connObj;
+module.exports = {connect};
